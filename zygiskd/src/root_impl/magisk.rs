@@ -89,7 +89,7 @@ pub fn uid_should_umount(uid: i32) -> bool {
     Command::new("magisk")
         .arg("--sqlite")
         .arg(format!(
-            "select 1 from denylist where package_name=\"{pkg}\" limit 1"
+            "select 1 from hidelist where package_name=\"{pkg}\" limit 1"
         ))
         .stdout(Stdio::piped())
         .spawn()
